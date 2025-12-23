@@ -1,75 +1,157 @@
-/* Header / Nav */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap");
+
+
+
+/* =========================
+   Header / Nav — Romantic House
+   Palette: primary rgb(0,0,0), secondary rgb(166,178,191)
+   Obiettivo: wordmark più grande SENZA aumentare l'altezza della barra
+   ========================= */
+
 .site-header{
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.86);
-  backdrop-filter: blur(10px);
+  z-index: 50;
+
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  z-index: 10;
 }
 
 .site-header, .site-footer{
   font-family: "Brandon Grotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
+/* Barra con altezza fissa (non cresce quando aumenti logo/wordmark) */
 .nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 18px;
+
+  height: 66px;       /* cambia qui se vuoi: 64–72px */
+  padding: 0;         /* niente padding verticale, evita crescita */
 }
 
+/* Brand */
 .brand{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 12px;
-  min-width: 220px;
+  text-decoration: none;
+  min-width: 240px;
 }
 
 .brand-logo{
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  border-radius: 12px;
-  background: white;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.95);
   border: 1px solid rgba(0,0,0,0.08);
-  padding: 6px;
+  padding: 7px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
 }
 
-.brand-name{
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  font-size: 14px;
+/* Wordmark più grande senza impattare sulla barra */
+.brand-wordmark{
+  height: 200px;       /* aumenta qui: 22–30px */
+  width: auto;
+  display: block;
+  transform: translateY(1px);
 }
 
+/* Links */
 .links{
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   gap: 6px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
+/* Link style: premium underline + soft pill */
 .nav-link{
+  position: relative;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.04em;
   font-size: 13px;
+
   padding: 10px 12px;
   border-radius: 999px;
   border: 1px solid transparent;
+
+  color: rgb(0,0,0);
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
 }
 
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 7px;
+  height: 1px;
+
+  background: rgba(0,0,0,0);
+  transform: scaleX(0.4);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease, background .18s ease;
+}
+
 .nav-link:hover{
-  background: rgba(166,178,191,0.20);
-  border-color: rgba(166,178,191,0.55);
+  background: rgba(166,178,191,0.18);
+  border-color: rgba(166,178,191,0.45);
   transform: translateY(-1px);
 }
 
+.nav-link:hover::after{
+  background: rgba(0,0,0,0.65);
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Active (se aggiungi .is-active via JS o manualmente) */
 .nav-link.is-active{
-  background: rgba(0,0,0,0.92);
-  color: white;
-  border-color: rgba(0,0,0,0.92);
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.14);
+}
+
+.nav-link.is-active::after{
+  background: rgb(0,0,0);
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Hairline signature */
+.header-hairline{
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(166,178,191,0.0),
+    rgba(166,178,191,0.80),
+    rgba(166,178,191,0.0)
+  );
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .brand{ min-width: 0; }
+  .brand-wordmark{ height: 22px; } /* più grande anche su mobile */
+  .brand-logo{ width: 42px; height: 42px; }
+}
+
+
+.site-header{
+  font-family: "Raleway", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.nav-link{
+  font-weight: 200; /* 100 = Thin puro, 200 più leggibile */
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
 }
