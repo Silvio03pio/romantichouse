@@ -1,0 +1,180 @@
+/* =========================
+   Grids
+   ========================= */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* =========================
+   Cards / Panels
+   ========================= */
+.card{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card .card-body{
+  padding: 14px 14px 16px;
+}
+
+.card .card-title{
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.card .card-text{
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 22px;
+  padding: 16px;
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   Badges
+   ========================= */
+.badge{
+  display: inline-block;
+  background: rgba(166,178,191,0.30);
+  border: 1px solid rgba(166,178,191,0.55);
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.btn:hover{
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn.secondary{
+  background: transparent;
+  color: var(--primary);
+}
+
+/* =========================
+   Forms
+   ========================= */
+.field{
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+input, textarea, select{
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+textarea{
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 920px){
+  .grid{ grid-template-columns: 1fr; }
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+
+
+/* =========================
+   Page helpers (no inline styles)
+   ========================= */
+.page-title{
+  margin: 0 0 10px;
+}
+
+.page-lead{
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.panel-title{
+  margin-top: 0;
+}
+
+.panel-tight{
+  margin-bottom: 16px;
+}
+
+/* Table wrapper */
+.table-wrap{
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.table thead tr{
+  background: rgba(166, 178, 191, 0.22);
+}
+
+.table th{
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table td{
+  padding: 12px;
+}
+
+.table td.is-bordered{
+  border-bottom: 1px solid var(--border);
+}
+
+/* Small spacing helpers (solo quelli usati) */
+.mb-14{ margin-bottom: 14px; }
+.mb-10{ margin-bottom: 10px; }
+.mb-0{ margin-bottom: 0; }

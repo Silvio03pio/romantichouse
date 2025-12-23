@@ -1,0 +1,286 @@
+/* =========================
+   Theme / Tokens
+   ========================= */
+:root{
+  --primary: rgb(0,0,0);
+  --secondary: rgb(166,178,191);
+
+  --bg: #ffffff;
+  --text: rgb(0,0,0);
+  --muted: rgba(0,0,0,0.62);
+
+  --card: rgba(0,0,0,0.03);
+  --border: rgba(0,0,0,0.10);
+
+  --radius: 18px;
+  --container: 1120px;
+
+  --shadow-sm: 0 10px 24px rgba(0,0,0,0.06);
+  --shadow-md: 0 18px 46px rgba(0,0,0,0.10);
+}
+
+/* =========================
+   Reset / Base
+   ========================= */
+*{ box-sizing: border-box; }
+html, body{ margin: 0; padding: 0; }
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display: block; }
+
+/* =========================
+   Layout
+   ========================= */
+.container{
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+/* =========================
+   Sections / Typography helpers
+   ========================= */
+.section{
+  padding: 64px 0;
+}
+
+.section-title{
+  font-size: 22px;
+  margin: 0 0 12px;
+  letter-spacing: -0.2px;
+}
+
+.section-subtitle{
+  margin: 0 0 26px;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 920px){
+  .section{ padding: 56px 0; }
+}
+
+
+/* =========================
+   Global helpers / accessibilità
+   ========================= */
+:focus-visible{
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+/* Wrapper sito (fallback se popup.css non carica) */
+.site.is-hidden{ display: none; }
+
+/* =========================
+   HERO (home)
+   ========================= */
+.hero{
+  position: relative;
+  width: 100%;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.hero--image-only{
+  /* usa la custom property --hero-bg impostata inline nell'HTML */
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* altezza visiva del hero (adattabile) */
+  min-height: 62vh;
+}
+
+.hero-spacer{
+  /* garantisce altezza anche se qualcuno rimuove min-height */
+  height: 62vh;
+}
+
+/* Responsive hero */
+@media (max-width: 920px){
+  .hero--image-only{ min-height: 48vh; }
+  .hero-spacer{ height: 48vh; }
+}
+
+/* =========================
+   Manifesto / Filosofia
+   ========================= */
+.manifesto{
+  background: var(--bg);
+}
+
+.manifesto-wrap{
+  max-width: 82ch;
+}
+
+.manifesto-title{
+  margin: 0 0 18px;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  color: var(--primary);
+}
+
+.manifesto-text p{
+  margin: 0 0 14px;
+  color: var(--text);
+}
+
+.manifesto-text strong{
+  color: var(--primary);
+}
+
+.manifesto-closer{
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   Split Card (Bassano)
+   ========================= */
+.split-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  min-height: 420px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.split-card__left{
+  display: flex;
+  align-items: center;
+  padding: 54px 18px;
+}
+
+.split-card__inner{
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.split-card__eyebrow{
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.split-card__title{
+  margin: 0 0 12px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  color: var(--primary);
+}
+
+.split-card__text{
+  margin: 0 0 18px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.split-card__cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--primary);   /* nero */
+  color: #fff;
+  border: 1px solid var(--primary);
+  box-shadow: var(--shadow-sm);
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.split-card__cta:hover{
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.split-card__right{
+  position: relative;
+  display: block;
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--card);
+}
+
+.split-card__right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 250ms ease;
+}
+
+.split-card__right:hover img{
+  transform: scale(1.05);
+}
+
+/* Responsive split-card */
+@media (max-width: 920px){
+  .split-card{
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .split-card__left{
+    padding: 42px 18px;
+  }
+  .split-card__right{
+    min-height: 300px;
+  }
+  .split-card__title{
+    font-size: 28px;
+  }
+}
+
+/* =========================
+   Booking section
+   ========================= */
+.booking-section{
+  background: var(--bg);
+}
+
+.booking-wrap{
+  display: grid;
+  gap: 18px;
+}
+
+.booking-head{
+  max-width: 78ch;
+}
+
+.booking-embed{
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px;
+  overflow: hidden;
+}
+
+/* Evita che iframe/widget "spacchi" il layout */
+.booking-embed iframe,
+.booking-embed > div{
+  max-width: 100%;
+}

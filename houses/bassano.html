@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Romantic House • Bassano</title>
+
+    <!-- CSS importato (globale) -->
+    <link rel="stylesheet" href="../css/styles.css?v=1" />
+    <!-- CSS importato (componenti) -->
+    <link rel="stylesheet" href="../css/components.css?v=1" />
+    <!-- CSS importato (pagina: house) -->
+    <link rel="stylesheet" href="../css/pages/house.css?v=20251223-1" />
+
+    <link rel="stylesheet" href="../css/header.css?v=1" />
+    <link rel="stylesheet" href="../css/footer.css?v=1" />
+
+
+    <!-- JS importato (pagina: bassano) -->
+    <script src="../js/bassano.js?v=20251223-1" defer></script>
+  </head>
+
+  <body>
+    <!-- 1) Sezione: Header (include) -->
+    <div data-include="../partials/header.html"></div>
+
+    <main>
+      <!-- 2) Sezione: Hero + Collage -->
+      <section class="house-hero" aria-label="Romantic House Bassano - Galleria">
+        <div class="container house-hero-wrap">
+          <div class="house-hero-head">
+            <div class="house-kicker">Romantic House</div>
+            <h1 class="house-title">La Stanza – Bassano</h1>
+            <p class="house-subtitle">Eleganza, privacy e tecnologia discreta nel cuore della Tuscia.</p>
+          </div>
+
+          <div class="house-collage" role="group" aria-label="Collage foto Stanza Bassano">
+            <button class="hc-item" type="button" data-full="../img/bassano1.png" aria-label="Apri foto 1">
+              <img src="../img/bassano1.png" alt="Stanza Bassano - Foto 1" loading="lazy" />
+            </button>
+            <button class="hc-item" type="button" data-full="../img/bassano2.png" aria-label="Apri foto 2">
+              <img src="../img/bassano2.png" alt="Stanza Bassano - Foto 2" loading="lazy" />
+            </button>
+            <button class="hc-item" type="button" data-full="../img/bassano3.png" aria-label="Apri foto 3">
+              <img src="../img/bassano3.png" alt="Stanza Bassano - Foto 3" loading="lazy" />
+            </button>
+            <button class="hc-item" type="button" data-full="../img/bassano4.png" aria-label="Apri foto 4">
+              <img src="../img/bassano4.png" alt="Stanza Bassano - Foto 4" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3) Sezione: Lightbox -->
+      <div class="rh-lightbox" id="rhLightbox" aria-hidden="true">
+        <div class="rh-lightbox__backdrop" data-close="1"></div>
+        <div class="rh-lightbox__panel" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
+          <button class="rh-lightbox__close" type="button" aria-label="Chiudi" data-close="1">×</button>
+          <img class="rh-lightbox__img" id="rhLightboxImg" alt="" />
+        </div>
+      </div>
+
+      <!-- 4) Sezione: Descrizione -->
+      <section class="section house-description" id="descrizione">
+        <div class="container">
+          <div class="house-text">
+            <p>
+              <strong>La Stanza Bassano</strong> è un open space raffinato e avvolgente, pensato per offrire comfort,
+              privacy e tecnologia discreta, dove il design contemporaneo incontra il calore dei materiali naturali.
+            </p>
+
+            <p>
+              Il cuore dell’ambiente è il <strong>letto matrimoniale</strong>, ampio e confortevole, inserito in uno
+              spazio luminoso e armonioso. Il <strong>divano letto</strong> si trasforma con eleganza in una seconda
+              area notte, ideale per accogliere fino a due ospiti aggiuntivi, senza rinunciare alla qualità del riposo.
+            </p>
+
+            <p>
+              A completare l’esperienza: <strong>area trucco dedicata</strong>, frigobar, cassaforte, Smart TV, Wi-Fi ad
+              alta velocità, climatizzazione regolabile e riscaldamento indipendente, per un soggiorno perfetto in ogni
+              stagione.
+            </p>
+
+            <p>
+              La stanza dispone di <strong>accesso keyless</strong>, <strong>Alexa integrata</strong> e
+              <strong>impianto domotico</strong>, che permettono di gestire luci, temperatura e atmosfera in modo
+              intuitivo, rendendo l’esperienza ancora più esclusiva e contemporanea.
+            </p>
+
+            <p>
+              Elemento distintivo è la suggestiva <strong>area soppalco</strong>, raggiungibile con pochi gradini: uno
+              spazio relax intimo e riservato, affacciato su una vetrata scenografica, perfetto per leggere, rilassarsi
+              o concedersi un momento di quiete immersi nella luce.
+            </p>
+
+            <p>
+              Il <strong>bagno privato</strong>, moderno ed elegante, è rifinito in grès e dotato di una doccia ampia e
+              confortevole, pensata come uno spazio di benessere quotidiano dove funzionalità e design si incontrano in
+              perfetta armonia.
+            </p>
+
+            <p class="house-closer">
+              La Stanza Bassano è ideale per chi desidera un soggiorno <strong>elegante</strong>,
+              <strong>tecnologicamente avanzato</strong> e profondamente <strong>rilassante</strong>, dove ogni dettaglio
+              è curato per offrire privacy e benessere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5) Sezione: Disponibilità (BedBooking) -->
+      <section class="section booking-section" id="disponibilita">
+        <div class="container booking-wrap">
+          <div class="booking-head">
+            <h2 class="section-title">Disponibilità &amp; Prenotazioni</h2>
+            <p class="section-subtitle">
+              Seleziona le date e verifica la disponibilità. Prenota direttamente in modo sicuro.
+            </p>
+          </div>
+
+          <div class="booking-embed" aria-label="Widget prenotazioni BedBooking">
+            <div id="widgetHolder_2nlgnbziq"></div>
+          </div>
+        </div>
+
+        <!-- JS importato (widget BedBooking) -->
+        <script>
+          (function (w, d, s, o, f, js, fjs) {
+            if (w[o]) return;
+            w["BB-Widget"] = o;
+            w[o] =
+              w[o] ||
+              function () {
+                (w[o].q = w[o].q || []).push(arguments);
+              };
+            js = d.createElement(s);
+            fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+          })(window, document, "script", "w1", "https://bed-booking.com/widget/widget.js");
+
+          w1("init", {
+            targetElementId: "widgetHolder_2nlgnbziq",
+            widgetId: "ec1c7c9fbb9d6487a6eca1b33f59cd34961d0df7",
+            type: "simple",
+            staticWidget: 1,
+          });
+        </script>
+      </section>
+    </main>
+
+    <!-- 6) Sezione: Footer (include) -->
+    <div data-include="../partials/footer.html"></div>
+
+    <!-- JS importato (globale: include partials) -->
+    <script src="../js/includes.js"></script>
+    <!-- JS importato (globale: logiche comuni) -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>

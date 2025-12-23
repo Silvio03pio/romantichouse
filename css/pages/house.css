@@ -1,0 +1,273 @@
+/* =========================
+   House page (Bassano) – coerente con styles.css
+   ========================= */
+
+.house-hero{
+  padding: 72px 0 34px;
+}
+
+.house-hero-wrap{
+  display: grid;
+  gap: 18px;
+}
+
+.house-hero-head{
+  max-width: 78ch;
+}
+
+.house-kicker{
+  font-family: "Brandon Grotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(0,0,0,0.62);
+  margin-bottom: 8px;
+}
+
+.house-title{
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+}
+
+.house-subtitle{
+  margin: 0;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+/* =========================
+   Collage (premium, compatto)
+   ========================= */
+.house-collage{
+  width: min(920px, 100%);
+  margin: 10px auto 0;
+  display: grid;
+  grid-template-columns: 1.35fr .65fr;
+  grid-template-rows: repeat(3, clamp(110px, 11vw, 150px));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.hc-item{
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+
+  /* “card” look coerente */
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.hc-item::after{
+  /* leggero overlay per uniformare le foto */
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.00), rgba(0,0,0,0.10));
+  opacity: .65;
+  pointer-events:none;
+}
+
+.hc-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+  transition: transform .22s ease, filter .22s ease;
+  filter: saturate(1.03) contrast(1.03);
+}
+
+/* layout editoriale */
+.hc-item:nth-child(1){
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+
+.hc-item:nth-child(2){ grid-column: 2; grid-row: 1; }
+.hc-item:nth-child(3){ grid-column: 2; grid-row: 2; }
+.hc-item:nth-child(4){ grid-column: 2; grid-row: 3; }
+
+@media (hover: hover) and (pointer: fine){
+  .hc-item:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .hc-item:hover img{
+    transform: scale(1.02);
+    filter: saturate(1.08) contrast(1.06);
+  }
+}
+
+/* Mobile */
+@media (max-width: 920px){
+  .house-hero{ padding: 56px 0 26px; }
+  .house-title{ font-size: 30px; }
+
+  .house-collage{
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+
+  .hc-item:nth-child(1){
+    grid-column: 1 / 3;
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .hc-item:nth-child(2),
+  .hc-item:nth-child(3),
+  .hc-item:nth-child(4){
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* =========================
+   Descrizione (tipografia pulita)
+   ========================= */
+.house-description .house-text{
+  max-width: 78ch;
+  color: rgba(0,0,0,0.88);
+}
+
+.house-description .house-text p{
+  margin: 0 0 14px;
+}
+
+.house-description .house-closer{
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+/* =========================
+   Booking embed (BedBooking) – neutro e coerente
+   ========================= */
+.booking-section{
+  padding: 64px 0;
+}
+
+.booking-wrap{
+  display: grid;
+  gap: 16px;
+}
+
+.booking-head{
+  max-width: 78ch;
+}
+
+.booking-embed{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 22px;
+  background: rgba(255,255,255,0.80);
+  box-shadow: var(--shadow-sm);
+  padding: 12px;
+}
+
+/* non forziamo altezza: lasciamo lavorare il widget */
+#widgetHolder_2nlgnbziq{ width: 100%; }
+#widgetHolder_2nlgnbziq iframe{
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 0 !important;
+  display: block;
+}
+
+@media (max-width: 920px){
+  .booking-embed{ padding: 10px; border-radius: 18px; }
+}
+
+/* =========================
+   Lightbox (foto ingrandite)
+   ========================= */
+.rh-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.rh-lightbox.is-open{
+  display: block;
+}
+
+.rh-lightbox__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(8px);
+}
+
+.rh-lightbox__panel{
+  position: relative;
+  margin: 4vh auto;
+  width: min(1100px, 92vw);
+  height: min(86vh, 920px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  pointer-events: none;
+}
+
+.rh-lightbox__img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+  pointer-events: auto;
+}
+
+.rh-lightbox__close{
+  pointer-events: auto;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow-sm);
+}
+
+/* frecce navigazione */
+.rh-lightbox__nav{
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.rh-lightbox__prev{ left: 10px; }
+.rh-lightbox__next{ right: 10px; }
+
+@media (max-width: 520px){
+  .rh-lightbox__prev, .rh-lightbox__next{
+    width: 40px; height: 40px;
+  }
+}

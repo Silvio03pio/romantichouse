@@ -1,0 +1,92 @@
+.site-footer{
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 28px 0 18px;
+  background: linear-gradient(180deg, rgba(166,178,191,0.10), rgba(0,0,0,0.02));
+  color: rgba(0,0,0,0.62);
+}
+
+.footer-wrap{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.footer-logo{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 6px;
+}
+
+.footer-name{
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.footer-tagline{
+  color: rgba(0,0,0,0.60);
+  font-size: 13px;
+}
+
+.footer-links{
+  display:flex;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.footer-col{
+  display:grid;
+  gap: 8px;
+}
+
+.footer-title{
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.72);
+  margin-bottom: 2px;
+}
+
+.footer-col a{
+  color: rgba(0,0,0,0.68);
+}
+
+.footer-col a:hover{
+  color: rgba(0,0,0,0.92);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  color: rgba(0,0,0,0.62);
+  font-size: 13px;
+}
+
+.footer-mini a{
+  color: rgba(0,0,0,0.62);
+}
+.footer-mini a:hover{
+  color: rgba(0,0,0,0.92);
+}

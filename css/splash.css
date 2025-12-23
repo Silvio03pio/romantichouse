@@ -1,0 +1,55 @@
+/* =========================
+   Splash / Intro
+   ========================= */
+
+.splash{
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #fff;
+}
+
+.splash-btn{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  gap: 14px;
+  place-items: center;
+  padding: 18px 22px;
+}
+
+.splash-logo{
+  width: min(220px, 58vw);
+  height: auto;
+}
+
+.splash-hint{
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.18);
+  position: relative;
+  opacity: 0.9;
+}
+
+.splash-hint::after{
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 999px;
+  background: rgb(166, 178, 191); /* secondary */
+  opacity: 0.55;
+}
+
+.splash.is-hidden{
+  display: none;
+}
+
+/* Wrapper sito */
+.site.is-hidden{
+  display: none;
+}

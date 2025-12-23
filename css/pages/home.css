@@ -1,0 +1,155 @@
+/* =========================
+   HOME.CSS — Romantic House
+   ========================= */
+
+/* HERO: solo immagine full screen */
+.hero--home.hero--image-only{
+  min-height: calc(100vh - 66px); /* sottrae header */
+  padding: 0;
+  position: relative;
+
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* nessun overlay */
+.hero--home.hero--image-only::before{
+  content: none;
+}
+
+/* mantiene la sezione “valida” senza contenuto */
+.hero-spacer{
+  height: 1px;
+}
+
+/* =========================
+   Sezione 2: Manifesto
+   ========================= */
+.manifesto{
+  padding: 70px 0;
+  background: #fff;
+}
+
+.manifesto-wrap{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 18px;
+  text-align: center;
+}
+
+.manifesto-title{
+  margin: 0 0 18px;
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  text-transform: uppercase;
+
+  /* titoli più “luxury” senza font esterni */
+  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+  font-weight: 700;
+}
+
+.manifesto-text{
+  max-width: 1100px;
+  margin: 0 auto;
+
+  /* testo leggibile e moderno */
+  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+}
+
+.manifesto-text p{
+  margin: 0 0 18px;
+  font-size: 20px;
+  line-height: 1.85;
+  color: rgba(0,0,0,0.78);
+}
+
+.manifesto-text strong{
+  color: rgba(0,0,0,0.96);
+  font-weight: 800;
+}
+
+.manifesto-closer{
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0,0,0,0.10);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 920px){
+  .manifesto{ padding: 56px 0; }
+
+  .manifesto-title{
+    font-size: 28px;
+    letter-spacing: -0.3px;
+  }
+
+  .manifesto-text p{
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================
+   BedBooking - Sezione 4 (clean)
+   ========================= */
+
+.booking-section {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.booking-wrap {
+  display: grid;
+  gap: 16px;
+}
+
+.booking-head {
+  max-width: 820px;
+}
+
+/* Contenitore neutro: niente box brutto */
+.booking-embed {
+  margin-top: 8px;
+  width: 100%;
+  overflow: visible;     /* lascia respirare il widget */
+  padding: 0;            /* niente padding che “sporca” */
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Il widget viene iniettato qui: non forzare altezze */
+#widgetHolder_2nlgnbziq {
+  width: 100%;
+}
+
+/* Se BedBooking crea un iframe interno, rendilo responsive */
+#widgetHolder_2nlgnbziq iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 0 !important;
+  display: block;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .booking-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.booking-embed {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}

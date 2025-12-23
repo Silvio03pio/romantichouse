@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <!-- META (sempre) -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Romantic House</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+
+
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/splash.css" />
+    <link rel="stylesheet" href="css/pages/home.css" />
+
+    <!-- solo se splash -->
+  </head>
+
+  <body>
+    <!-- 0) Sezione: Splash -->
+    <div class="splash" id="splash" role="dialog" aria-label="Apri Romantic House">
+      <button class="splash-btn" id="splashBtn" type="button" aria-label="Entra nel sito">
+        <img src="img/logo.png" alt="Romantic House logo" class="splash-logo" />
+        <div class="splash-hint"></div>
+      </button>
+    </div>
+
+    <!-- Wrapper sito (nascosto finché non clicchi lo splash) -->
+    <div id="site" class="site is-hidden">
+      <!-- Header (include) -->
+      <div data-include="partials/header.html"></div>
+
+      <main>
+        <!-- 1) Sezione: Hero -->
+        <section class="hero hero--home hero--image-only" style="--hero-bg: url('/img/copertina.png');">
+          <div class="hero-spacer" aria-hidden="true"></div>
+        </section>
+
+        <!-- 2) Sezione: Filosofia -->
+        <section class="section manifesto" id="filosofia">
+          <div class="container">
+            <div class="manifesto-wrap">
+              <h2 class="manifesto-title">La nostra filosofia di accoglienza</h2>
+
+              <div class="manifesto-text">
+                <p>
+                  <strong>Romantic House è un rifugio di charme</strong>, pensato per chi ricerca un’ospitalità
+                  esclusiva, fatta di <strong>eleganza, intimità e assoluta privacy</strong>. Un luogo dove il lusso
+                  non è ostentazione, ma <strong>armonia, equilibrio</strong> e <strong>cura impeccabile</strong> di
+                  ogni dettaglio.
+                </p>
+
+                <p>
+                  <strong>Completamente ristrutturata</strong>, Romantic House nasce dall’incontro raffinato tra
+                  <strong>design contemporaneo</strong> e <strong>anima rustica</strong>, dove la pietra, il legno e i
+                  materiali naturali dialogano con linee moderne e atmosfere sofisticate. Gli spazi sono
+                  <strong>ampi, luminosi e avvolgenti</strong>, progettati per offrire una sensazione immediata di
+                  <strong>benessere e libertà</strong>.
+                </p>
+
+                <p>
+                  Immersa nel cuore autentico della Tuscia, a <strong>Bassano in Teverina</strong>, la struttura è
+                  un’oasi di <strong>quiete riservata</strong>, lontana dal rumore e dal turismo convenzionale. Qui il
+                  tempo si dilata, la luce diventa protagonista e ogni ambiente invita a
+                  <strong>rallentare, respirare</strong> e ritrovare una profonda connessione con sé stessi.
+                </p>
+
+                <p>
+                  La nostra idea di accoglienza è <strong>discreta, silenziosa e sartoriale</strong>: un lusso fatto di
+                  <strong>privacy assoluta</strong>, atmosfere curate, silenzi preziosi e momenti da assaporare con
+                  lentezza.
+                </p>
+
+                <p>
+                  Romantic House è pensata per chi desidera vivere un’esperienza <strong>sensoriale ed emozionale</strong>,
+                  dove ogni dettaglio racconta una storia di <strong>eleganza senza tempo</strong>,
+                  <strong>comfort autentico</strong> e <strong>benessere profondo</strong>.
+                </p>
+
+                <p class="manifesto-closer">
+                  <strong>Un soggiorno intimo, esclusivo e memorabile.</strong><br />
+                  <strong>Un nuovo modo di vivere la Tuscia.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3) Sezione: Card Bassano -->
+        <article class="split-card">
+          <div class="split-card__left">
+            <div class="split-card__inner">
+              <div class="split-card__eyebrow">Romantic House</div>
+              <h3 class="split-card__title">Bassano in Teverina</h3>
+              <p class="split-card__text">
+                Un rifugio intimo di charme, progettato per privacy, comfort e silenzio.
+              </p>
+
+              <a class="split-card__cta" href="houses/bassano.html" aria-label="Scopri di più su Romantic House Bassano">
+                Scopri di più
+              </a>
+            </div>
+          </div>
+
+          <a class="split-card__right" href="houses/bassano.html" aria-label="Apri Romantic House Bassano">
+            <img src="img/bassano1.png" alt="Romantic House Bassano" />
+          </a>
+        </article>
+
+        <!-- 4) Sezione: Disponibilità (BedBooking) -->
+        <section class="section booking-section" id="disponibilita">
+          <div class="container booking-wrap">
+            <div class="booking-head">
+              <h2 class="section-title">Disponibilità &amp; Prenotazioni</h2>
+              <p class="section-subtitle">
+                Seleziona le date e verifica la disponibilità. Prenota direttamente in modo sicuro.
+              </p>
+            </div>
+
+            <div class="booking-embed" aria-label="Widget prenotazioni BedBooking">
+              <div id="widgetHolder_2nlgnbziq"></div>
+            </div>
+          </div>
+
+          <!-- JS importato (widget BedBooking) -->
+          <script>
+            (function (w, d, s, o, f, js, fjs) {
+              if (w[o]) return;
+              w["BB-Widget"] = o;
+              w[o] =
+                w[o] ||
+                function () {
+                  (w[o].q = w[o].q || []).push(arguments);
+                };
+              js = d.createElement(s);
+              fjs = d.getElementsByTagName(s)[0];
+              js.id = o;
+              js.src = f;
+              js.async = 1;
+              fjs.parentNode.insertBefore(js, fjs);
+            })(window, document, "script", "w1", "https://bed-booking.com/widget/widget.js");
+
+            w1("init", {
+              targetElementId: "widgetHolder_2nlgnbziq",
+              widgetId: "ec1c7c9fbb9d6487a6eca1b33f59cd34961d0df7",
+              type: "simple",
+              staticWidget: 1,
+            });
+          </script>
+        </section>
+      </main>
+
+      <!-- Footer (include) -->
+      <div data-include="partials/footer.html"></div>
+    </div>
+    <!-- /#site -->
+
+    <!-- JS importato (globale: include partials) -->
+    <script src="js/includes.js"></script>
+    <!-- JS importato (globale: logiche comuni) -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

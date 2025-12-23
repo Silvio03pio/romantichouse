@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prezzi &amp; Disponibilità | Romantic House</title>
+
+    <!-- CSS importato (globale) -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- CSS importato (componenti) -->
+    <link rel="stylesheet" href="css/components.css" />
+    <!-- CSS importato (header/footer) -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+
+  <body>
+    <!-- 1) Sezione: Header (include) -->
+    <div data-include="partials/header.html"></div>
+
+    <main class="section">
+      <div class="container">
+        <!-- 2) Sezione: Intro -->
+        <h1 class="page-title">Prezzi &amp; Disponibilità</h1>
+        <p class="page-lead">
+          In questa fase, la disponibilità viene gestita su richiesta. A breve potremo integrare un sistema (es.
+          SimpleBooking o API dedicata).
+        </p>
+
+        <!-- 3) Sezione: Tabella prezzi -->
+        <div class="panel panel-tight">
+          <h2 class="section-title panel-title">Indicazione prezzi (provvisoria)</h2>
+          <p class="section-subtitle">Aggiorneremo con disponibilità live quando integrerai l’API.</p>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Località</th>
+                  <th>Prezzo/notte</th>
+                  <th>Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="is-bordered">Bassano in Teverina</td>
+                  <td class="is-bordered">€ --</td>
+                  <td class="is-bordered">Inserire regole e dettagli</td>
+                </tr>
+                <tr>
+                  <td>Penna</td>
+                  <td>€ --</td>
+                  <td>Inserire regole e dettagli</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4) Sezione: Richiesta disponibilità + WhatsApp -->
+        <div class="contact-grid">
+          <div class="panel">
+            <h2 class="section-title panel-title">Richiedi disponibilità</h2>
+
+            <!-- Nota: per sito statico usa Formspree / Netlify Forms / endpoint tuo -->
+            <form action="#" method="post">
+              <div class="field">
+                <label for="house">Struttura</label>
+                <select id="house" name="house" required>
+                  <option value="">Seleziona</option>
+                  <option value="bassano">Romantic House • Bassano</option>
+                  <option value="penna">Romantic House • Penna</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="name">Nome e cognome</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+
+              <div class="field">
+                <label for="dates">Date (es. 10–12 marzo)</label>
+                <input id="dates" name="dates" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="msg">Messaggio</label>
+                <textarea id="msg" name="message" placeholder="Numero ospiti, richieste, orario di arrivo..."></textarea>
+              </div>
+
+              <button class="btn" type="submit">Invia richiesta</button>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2 class="section-title panel-title">Preferisci WhatsApp?</h2>
+            <p class="page-lead mb-14">
+              È il metodo più rapido: inviaci struttura + date + ospiti e ti rispondiamo con conferma e prezzo.
+            </p>
+            <a class="btn" href="https://wa.me/390000000000" target="_blank" rel="noopener">Contatta su WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 5) Sezione: Footer (include) -->
+    <div data-include="partials/footer.html"></div>
+
+    <!-- JS importato (globale: include partials) -->
+    <script src="js/includes.js"></script>
+    <!-- JS importato (globale: logiche comuni) -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
