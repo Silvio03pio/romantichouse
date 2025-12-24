@@ -178,3 +178,14 @@ textarea{
 .mb-14{ margin-bottom: 14px; }
 .mb-10{ margin-bottom: 10px; }
 .mb-0{ margin-bottom: 0; }
+
+.booking-head h1{
+  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+  font-weight: 700;
+}
+
+.booking-head .section-subtitle{
+  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+  font-weight: 600; /* o 500 */
+}
+

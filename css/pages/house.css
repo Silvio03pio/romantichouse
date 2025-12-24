@@ -2,21 +2,29 @@
    House page (Bassano) – coerente con styles.css
    ========================= */
 
+/* Global font (serif) */
+:root{
+  --font-serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+}
+
 .house-hero{
   padding: 72px 0 34px;
+  font-family: var(--font-serif);
 }
 
 .house-hero-wrap{
   display: grid;
   gap: 18px;
+  font-family: var(--font-serif);
 }
 
 .house-hero-head{
   max-width: 78ch;
+  font-family: var(--font-serif);
 }
 
 .house-kicker{
-  font-family: "Brandon Grotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: var(--font-serif);
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -30,12 +38,14 @@
   font-size: 34px;
   line-height: 1.12;
   letter-spacing: -0.5px;
+  font-family: var(--font-serif);
 }
 
 .house-subtitle{
   margin: 0;
   color: var(--muted);
   max-width: 72ch;
+  font-family: var(--font-serif);
 }
 
 /* =========================
@@ -138,16 +148,19 @@
 .house-description .house-text{
   max-width: 78ch;
   color: rgba(0,0,0,0.88);
+  font-family: var(--font-serif);
 }
 
 .house-description .house-text p{
   margin: 0 0 14px;
+  font-family: var(--font-serif);
 }
 
 .house-description .house-closer{
   margin-top: 18px;
   padding-top: 14px;
   border-top: 1px solid rgba(0,0,0,0.08);
+  font-family: var(--font-serif);
 }
 
 /* =========================
@@ -155,15 +168,18 @@
    ========================= */
 .booking-section{
   padding: 64px 0;
+  font-family: var(--font-serif);
 }
 
 .booking-wrap{
   display: grid;
   gap: 16px;
+  font-family: var(--font-serif);
 }
 
 .booking-head{
   max-width: 78ch;
+  font-family: var(--font-serif);
 }
 
 .booking-embed{
@@ -172,10 +188,11 @@
   background: rgba(255,255,255,0.80);
   box-shadow: var(--shadow-sm);
   padding: 12px;
+  font-family: var(--font-serif);
 }
 
 /* non forziamo altezza: lasciamo lavorare il widget */
-#widgetHolder_2nlgnbziq{ width: 100%; }
+#widgetHolder_2nlgnbziq{ width: 100%; font-family: var(--font-serif); }
 #widgetHolder_2nlgnbziq iframe{
   width: 100% !important;
   max-width: 100% !important;
@@ -195,6 +212,7 @@
   inset: 0;
   z-index: 9999;
   display: none;
+  font-family: var(--font-serif);
 }
 
 .rh-lightbox.is-open{
@@ -243,6 +261,7 @@
   line-height: 1;
   background: rgba(255,255,255,0.92);
   box-shadow: var(--shadow-sm);
+  font-family: var(--font-serif);
 }
 
 /* frecce navigazione */
@@ -261,6 +280,7 @@
   display: grid;
   place-items: center;
   font-size: 18px;
+  font-family: var(--font-serif);
 }
 
 .rh-lightbox__prev{ left: 10px; }

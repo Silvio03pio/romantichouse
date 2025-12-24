@@ -2,8 +2,14 @@
    HOME.CSS — Romantic House
    ========================= */
 
+/* Global font (serif)
+   Nota: applico il font a tutti i testi di questo file tramite font-family nei blocchi già esistenti,
+   senza alterare la struttura (regole/selector/ordine) del CSS. */
+:root{
+  --font-serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+}
 
-   /* =========================
+/* =========================
    HERO HOME — contenuto + sfondo sfocato
    ========================= */
 
@@ -99,14 +105,14 @@
   }
 }
 
-
-
 /* =========================
    Sezione 2: Manifesto
    ========================= */
+
 .manifesto{
   padding: 70px 0;
   background: #fff;
+  font-family: var(--font-serif);
 }
 
 .manifesto-wrap{
@@ -114,6 +120,7 @@
   margin: 0 auto;
   padding: 0 18px;
   text-align: center;
+  font-family: var(--font-serif);
 }
 
 .manifesto-title{
@@ -124,7 +131,7 @@
   text-transform: uppercase;
 
   /* titoli più “luxury” senza font esterni */
-  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+  font-family: var(--font-serif);
   font-weight: 700;
 }
 
@@ -133,7 +140,7 @@
   margin: 0 auto;
 
   /* testo leggibile e moderno */
-  font-family: var(--font-serif, ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif);
+  font-family: var(--font-serif);
 }
 
 .manifesto-text p{
@@ -141,11 +148,13 @@
   font-size: 20px;
   line-height: 1.85;
   color: rgba(0,0,0,0.78);
+  font-family: var(--font-serif);
 }
 
 .manifesto-text strong{
   color: rgba(0,0,0,0.96);
   font-weight: 800;
+  font-family: var(--font-serif);
 }
 
 .manifesto-closer{
@@ -154,6 +163,7 @@
   border-top: 1px solid rgba(0,0,0,0.10);
   font-size: 20px;
   line-height: 1.7;
+  font-family: var(--font-serif);
 }
 
 /* =========================
@@ -173,27 +183,155 @@
   }
 }
 
+/* =========================
+   Split Card (Bassano) — Dark / Inverted SEZIONE 3
+   ========================= */
+
+.split-card{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  min-height: 420px;
+
+  /* fondo nero + bordi soft */
+  background: var(--primary); /* nero */
+  border-top: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  font-family: var(--font-serif);
+}
+
+.split-card__left{
+  display: flex;
+  align-items: center;
+  padding: 54px 18px;
+  font-family: var(--font-serif);
+}
+
+.split-card__inner{
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  font-family: var(--font-serif);
+}
+
+.split-card__eyebrow{
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  /* testo chiaro “muted” */
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 10px;
+  font-family: var(--font-serif);
+}
+
+.split-card__title{
+  margin: 0 0 12px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+
+  /* titolo bianco */
+  color: #fff;
+  font-family: var(--font-serif);
+}
+
+.split-card__text{
+  margin: 0 0 18px;
+
+  /* body chiaro “muted” */
+  color: rgba(255,255,255,0.78);
+  max-width: 60ch;
+  font-family: var(--font-serif);
+}
+
+.split-card__cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+
+  /* bottone invertito per staccare sul nero */
+  background: #fff;
+  color: var(--primary); /* nero */
+  border: 1px solid rgba(255,255,255,0.85);
+
+  box-shadow: var(--shadow-sm);
+  transition: transform 160ms ease, opacity 160ms ease;
+  font-family: var(--font-serif);
+}
+
+.split-card__cta:hover{
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.split-card__right{
+  position: relative;
+  display: block;
+  min-height: 420px;
+  overflow: hidden;
+
+  /* pannello immagine scuro (se la foto non copre subito) */
+  background: #0b0b0b;
+}
+
+.split-card__right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 250ms ease;
+}
+
+.split-card__right:hover img{
+  transform: scale(1.05);
+}
+
+/* Responsive split-card */
+@media (max-width: 920px){
+  .split-card{
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .split-card__left{
+    padding: 42px 18px;
+  }
+  .split-card__right{
+    min-height: 300px;
+  }
+  .split-card__title{
+    font-size: 28px;
+  }
+}
 
 /* =========================
    BedBooking - Sezione 4 (clean)
    ========================= */
 
-.booking-section {
+.booking-section{
   padding-top: 56px;
   padding-bottom: 56px;
+  font-family: var(--font-serif);
 }
 
-.booking-wrap {
+.booking-wrap{
   display: grid;
   gap: 16px;
+  font-family: var(--font-serif);
 }
 
-.booking-head {
+.booking-head{
   max-width: 820px;
+  font-family: var(--font-serif);
 }
 
 /* Contenitore neutro: niente box brutto */
-.booking-embed {
+.booking-embed{
   margin-top: 8px;
   width: 100%;
   overflow: visible;     /* lascia respirare il widget */
@@ -202,15 +340,17 @@
   border: 0;
   box-shadow: none;
   border-radius: 0;
+  font-family: var(--font-serif);
 }
 
 /* Il widget viene iniettato qui: non forzare altezze */
-#widgetHolder_2nlgnbziq {
+#widgetHolder_2nlgnbziq{
   width: 100%;
+  font-family: var(--font-serif);
 }
 
 /* Se BedBooking crea un iframe interno, rendilo responsive */
-#widgetHolder_2nlgnbziq iframe {
+#widgetHolder_2nlgnbziq iframe{
   width: 100% !important;
   max-width: 100% !important;
   border: 0 !important;
@@ -218,15 +358,16 @@
 }
 
 /* Mobile spacing */
-@media (max-width: 768px) {
-  .booking-section {
+@media (max-width: 768px){
+  .booking-section{
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 
-.booking-embed {
+.booking-embed{
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid rgba(0,0,0,.08);
+  font-family: var(--font-serif);
 }
