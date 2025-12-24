@@ -1,6 +1,24 @@
 /* =========================
-   House page (Bassano) – coerente con styles.css
+   House page (TUTTE LE ROMANTIC HOUSE USANO QUESTO CSS) – coerente con styles.css
    ========================= */
+
+/* Global font (serif) — FORZA anche su mobile */
+:root{
+  --font-serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+}
+
+/* Applica il font a tutta la pagina (desktop + mobile) */
+html, body{
+  font-family: var(--font-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Forza anche sugli elementi form (su iOS spesso “scappano”) */
+button, input, select, textarea{
+  font-family: inherit;
+}
+
+
 
 /* Global font (serif) */
 :root{
@@ -129,6 +147,10 @@
     gap: 10px;
   }
 
+  .hc-item{
+    border-radius: 18px; /* leggermente più compatto su mobile */
+  }
+
   .hc-item:nth-child(1){
     grid-column: 1 / 3;
     grid-row: auto;
@@ -139,6 +161,24 @@
   .hc-item:nth-child(3),
   .hc-item:nth-child(4){
     aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 520px){
+  .house-hero{ padding: 48px 0 22px; }
+  .house-title{ font-size: 28px; }
+
+  .house-collage{
+    gap: 8px;
+  }
+
+  .hc-item{
+    border-radius: 16px;
+  }
+
+  /* rende il tile “main” più elegante su schermi molto stretti */
+  .hc-item:nth-child(1){
+    aspect-ratio: 16 / 11;
   }
 }
 
@@ -192,7 +232,11 @@
 }
 
 /* non forziamo altezza: lasciamo lavorare il widget */
-#widgetHolder_2nlgnbziq{ width: 100%; font-family: var(--font-serif); }
+#widgetHolder_2nlgnbziq{
+  width: 100%;
+  font-family: var(--font-serif);
+}
+
 #widgetHolder_2nlgnbziq iframe{
   width: 100% !important;
   max-width: 100% !important;
@@ -201,7 +245,13 @@
 }
 
 @media (max-width: 920px){
+  .booking-section{ padding: 56px 0; }
   .booking-embed{ padding: 10px; border-radius: 18px; }
+}
+
+@media (max-width: 520px){
+  .booking-section{ padding: 44px 0; }
+  .booking-embed{ padding: 10px; border-radius: 16px; }
 }
 
 /* =========================
@@ -224,6 +274,7 @@
   inset: 0;
   background: rgba(0,0,0,.72);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .rh-lightbox__panel{
@@ -287,7 +338,30 @@
 .rh-lightbox__next{ right: 10px; }
 
 @media (max-width: 520px){
-  .rh-lightbox__prev, .rh-lightbox__next{
-    width: 40px; height: 40px;
+  .rh-lightbox__panel{
+    margin: 3vh auto;
+    width: 94vw;
+    height: 88vh;
+    padding: 0 8px;
   }
+
+  .rh-lightbox__img{
+    border-radius: 18px;
+  }
+
+  .rh-lightbox__close{
+    top: -8px;
+    right: -8px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .rh-lightbox__prev, .rh-lightbox__next{
+    width: 40px;
+    height: 40px;
+  }
+
+  .rh-lightbox__prev{ left: 8px; }
+  .rh-lightbox__next{ right: 8px; }
 }
