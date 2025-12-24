@@ -1,67 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap");
-
 /* =========================
    Footer (Raleway like Leather)
+   Fix: riduce lo spazio sopra/sotto ai loghi
    ========================= */
+
+/* (opzionale) tieni l'import se già lo usi */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;700&display=swap");
+
 .site-footer{
   font-family: "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding: 28px 0 18px;
+  padding: 18px 0 12px; /* prima 28px 0 18px */
   background: linear-gradient(180deg, rgba(166,178,191,0.10), rgba(0,0,0,0.02));
   color: rgba(0,0,0,0.62);
 }
 
-.site-footer a{
-  font-family: inherit;
-}
+.site-footer a{ font-family: inherit; }
 
 /* layout */
 .footer-wrap{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap: 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
   flex-wrap: wrap;
-  padding-bottom: 18px;
+  padding-bottom: 12px; /* prima 18px */
 }
 
 /* =========================
    Brand block (header-like)
    ========================= */
 .footer-brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  flex-wrap: wrap; /* comportamento “header-like” */
+  display: flex;
+  align-items: center;
+  gap: 10px;          /* prima 12px */
+  flex-wrap: wrap;
 }
 
 /* wrapper logos (icona + wordmark) */
 .footer-brand__logos{
-  display:flex;
-  align-items:center;
-  gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;          /* prima 12px */
+  line-height: 0;     /* elimina micro-spazi verticali inline */
 }
 
 /* logo icona */
 .footer-logo{
-  width: 44px;
-  height: 44px;
+  width: 40px;        /* leggermente più compatto */
+  height: 40px;
   object-fit: contain;
-  border-radius: 14px;
+  border-radius: 12px;
   background: rgba(255,255,255,0.95);
   border: 1px solid rgba(0,0,0,0.08);
-  padding: 7px;
+  padding: 6px;       /* prima 7px */
   box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  display: block;
 }
 
-/* wordmark */
+/* wrapper logos: limita altezza e impedisce che il footer cresca */
+.footer-brand__logos{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 0;
+
+  max-height: 44px;     /* regola qui: altezza massima area loghi */
+  overflow: hidden;     /* se il wordmark è più alto, non allarga il footer */
+}
+
+/* wordmark: puoi tenerlo grande, ma non farà crescere il footer */
 .footer-wordmark{
-  height: 200px;     /* se vuoi grande, alza a 22/24; 200px era eccessivo */
+  height: 150px;        /* quanto vuoi */
   width: auto;
   display: block;
-  transform: translateY(1px);
 }
 
+/* testo brand */
 .footer-brand__text{
   display: grid;
   gap: 2px;
@@ -85,13 +99,13 @@
    Links columns
    ========================= */
 .footer-links{
-  display:flex;
-  gap: 34px;
+  display: flex;
+  gap: 30px;          /* prima 34px */
   flex-wrap: wrap;
 }
 
 .footer-col{
-  display:grid;
+  display: grid;
   gap: 8px;
 }
 
@@ -120,12 +134,12 @@
    Bottom row
    ========================= */
 .footer-bottom{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 12px;
   flex-wrap: wrap;
-  padding-top: 14px;
+  padding-top: 10px; /* prima 14px */
   border-top: 1px solid rgba(0,0,0,0.08);
   color: rgba(0,0,0,0.62);
   font-size: 13px;
@@ -136,10 +150,9 @@
   color: rgba(0,0,0,0.62);
   text-decoration: none;
 }
+
 .footer-mini a:hover{
   color: rgba(0,0,0,0.92);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
-/* =================*
