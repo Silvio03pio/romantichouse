@@ -155,7 +155,7 @@ img{
   /* hero più corto e controllato */
   .hero--home{
     width: 100%;
-    height: 52vh;        /* regola qui */
+    height: 30vh;        /* regola qui */
     min-height: 300px;
     max-height: 420px;
     background: transparent;
@@ -189,6 +189,30 @@ img{
     display: none !important;
   }
 }
+
+@media (max-width: 520px){
+
+  /* elimina QUALSIASI margine esterno dell’hero */
+  .hero--home{
+    margin: 0 !important;
+  }
+
+  /* elimina spazio sotto l’header */
+  header{
+    margin-bottom: 0 !important;
+  }
+
+  /* la sezione subito dopo l’hero non deve “staccarsi” */
+  .hero--home + .section{
+    padding-top: 0px;   /* oppure 0 se la vuoi attaccata */
+  }
+}
+
+.hero--home + .section{
+  padding-top: 0;
+}
+
+
 
 /* =========================
    Manifesto / Filosofia

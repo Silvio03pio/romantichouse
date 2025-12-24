@@ -44,6 +44,7 @@
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     180deg,
     rgba(255,255,255,0.35),
@@ -73,10 +74,11 @@
 
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center;
 }
 
 /* =========================
-   RESPONSIVE
+   HERO HOME — Responsive
    ========================= */
 
 /* Tablet */
@@ -90,20 +92,44 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 520px){
+
+  /* Mobile: niente card e niente padding (come già hai) */
   .hero--home{
-    padding: 24px 0;
+    padding: 0 !important;
+    display: block !important;
+    background: transparent !important;
   }
 
+  .hero--home::before,
+  .hero--home::after{
+    content: none !important;
+  }
+
+  /* sposta il box a destra (come hai fatto) */
   .hero-inner{
-    border-radius: 16px;
+    width: 100% !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    transform: translateX(0px) !important; /* regola qui */
   }
 
+  /* immagine: tutta visibile, NO crop */
   .hero-img{
-    aspect-ratio: 1 / 1;
+    width: 100% !important;
+    height: auto !important;         /* fondamentale */
+    aspect-ratio: auto !important;   /* disattiva ratio */
+    object-fit: contain !important;  /* no crop */
+    display: block;
   }
 }
+
+
+
+
 
 /* =========================
    Sezione 2: Manifesto
