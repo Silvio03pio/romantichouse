@@ -60,7 +60,7 @@ button, input, select, textarea{
 }
 
 /* =========================
-   Collage (premium, compatto) — DESKTOP
+   Collage (premium, compatto) — DESKTOP (>= 1025px)
    ========================= */
 .house-collage{
   width: min(920px, 100%);
@@ -81,14 +81,12 @@ button, input, select, textarea{
   overflow: hidden;
   position: relative;
 
-  /* “card” look coerente */
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: var(--shadow-sm);
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .hc-item::after{
-  /* leggero overlay per uniformare le foto */
   content:"";
   position:absolute;
   inset:0;
@@ -112,7 +110,6 @@ button, input, select, textarea{
   grid-column: 1;
   grid-row: 1 / 4;
 }
-
 .hc-item:nth-child(2){ grid-column: 2; grid-row: 1; }
 .hc-item:nth-child(3){ grid-column: 2; grid-row: 2; }
 .hc-item:nth-child(4){ grid-column: 2; grid-row: 3; }
@@ -129,45 +126,37 @@ button, input, select, textarea{
 }
 
 /* =========================
-   Mobile: CAROUSEL swipe (<= 920 / <= 520)
+   CAROUSEL (<= 1024px)
+   - iPad + PC finestra stretta
    - 4 immagini stessa dimensione
-   - scroll-snap “a scatti” come slider
    ========================= */
-@media (max-width: 920px){
+@media (max-width: 1024px){
   .house-hero{ padding: 56px 0 26px; }
   .house-title{ font-size: 30px; }
 
-  /* Track orizzontale */
   .house-collage{
-    width: 100%;
-    display: flex;
-    gap: 12px;
+    display: flex !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    width: 100% !important;
+    gap: 12px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch;
 
     scroll-snap-type: x mandatory;
     scroll-padding: 18px;
 
-    padding: 0 18px;
-    margin: 10px -18px 0; /* full-bleed */
-  }
+    padding: 0 18px !important;
+    margin: 10px -18px 0 !important;
 
-  /* Nasconde scrollbar */
-  .house-collage{
     scrollbar-width: none; /* Firefox */
   }
+
   .house-collage::-webkit-scrollbar{
     display: none; /* Chrome/Safari */
-  }
-
-  /* Ogni slide: stessa dimensione */
-  .hc-item{
-    flex: 0 0 78%;
-    aspect-ratio: 16 / 10;
-    border-radius: 18px;
-    scroll-snap-align: start;
   }
 
   /* Neutralizza posizionamenti grid desktop */
@@ -175,26 +164,65 @@ button, input, select, textarea{
   .hc-item:nth-child(2),
   .hc-item:nth-child(3),
   .hc-item:nth-child(4){
-    grid-column: auto;
-    grid-row: auto;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .hc-item{
+    flex: 0 0 52% !important;   /* “mezzo schermo”: quasi 2 card visibili */
+    aspect-ratio: 16 / 10;
+    scroll-snap-align: start;
+    border-radius: 18px !important;
+  }
+
+  .hc-item img{
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+    transform: none !important;
   }
 }
 
+/* =========================
+   Mobile (<= 920px) — slide più grande
+   ========================= */
+@media (max-width: 920px){
+  .house-hero{ padding: 56px 0 26px; }
+  .house-title{ font-size: 30px; }
+
+  .house-collage{
+    scroll-padding: 18px;
+    padding: 0 18px !important;
+    margin: 10px -18px 0 !important;
+    gap: 12px !important;
+  }
+
+  .hc-item{
+    flex: 0 0 78% !important;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px !important;
+  }
+}
+
+/* =========================
+   Small mobile (<= 520px) — slide ancora più grande e più alta
+   ========================= */
 @media (max-width: 520px){
   .house-hero{ padding: 48px 0 22px; }
   .house-title{ font-size: 28px; }
 
   .house-collage{
-    gap: 10px;
-    padding: 0 14px;
-    margin: 10px -14px 0;
+    gap: 10px !important;
+    padding: 0 14px !important;
+    margin: 10px -14px 0 !important;
     scroll-padding: 14px;
   }
 
   .hc-item{
-    flex-basis: 88%;
+    flex: 0 0 88% !important;
     aspect-ratio: 4 / 3;
-    border-radius: 16px;
+    border-radius: 16px !important;
   }
 }
 
