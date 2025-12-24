@@ -56,7 +56,7 @@
 
 /* wordmark */
 .footer-wordmark{
-  height: 200px;     /* se vuoi grande, alza a 22/24; 200px era eccessivo */
+  height: 150px;     /* se vuoi grande, alza a 22/24; 200px era eccessivo */
   width: auto;
   display: block;
   transform: translateY(1px);

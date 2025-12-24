@@ -58,7 +58,7 @@
 
 /* Wordmark più grande senza impattare sulla barra */
 .brand-wordmark{
-  height: 200px;       /* aumenta qui: 22–30px */
+  height: 150px;       /* aumenta qui: 22–30px */
   width: auto;
   display: block;
   transform: translateY(1px);
