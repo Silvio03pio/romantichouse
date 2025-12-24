@@ -262,7 +262,7 @@
   border-radius: 6px;
   border: 1px solid rgba(0,0,0,0.18);
 
-  background: rgb(216, 200, 200);
+  background: rgb(255, 255, 255);
   color: rgba(0,0,0,0.95);
 
   box-shadow: 0 10px 24px rgba(0,0,0,0.10);
@@ -299,7 +299,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(0, 0, 0, 0.95);
   border-radius: 2px;
 }
 
@@ -324,11 +324,11 @@
   display: inline-block;
   border-radius: 2px;
 
-  background: rgba(255,255,255,0.95);
+  background: rgba(0, 0, 0, 0.95);
 
   /* 2 linee “clonate” sopra e sotto = totale 3 */
   box-shadow:
-    0 -5px 0 rgba(255,255,255,0.95),
-    0  5px 0 rgba(255,255,255,0.95);
+    0 -5px 0 rgba(0, 0, 0, 0.95),
+    0  5px 0 rgba(0, 0, 0, 0.95);
 }
 
