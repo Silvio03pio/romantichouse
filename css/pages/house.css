@@ -1,5 +1,5 @@
 /* =========================
-   House page (Bassano) – coerente con styles.css
+CSS PER TUTTE LE ROMANTIC HOUSE – coerente con styles.css
    ========================= */
 
 /* Global font (serif) — FORZA anche su mobile */
@@ -409,3 +409,127 @@ button, input, select, textarea{
   .rh-lightbox__prev{ left: 8px; }
   .rh-lightbox__next{ right: 8px; }
 }
+
+
+
+/* =========================
+   Layout descrizione + servizi (colonna destra sticky)
+   ========================= */
+
+.house-desc-layout{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 22px;
+  align-items: start;
+}
+
+.house-desc-main{
+  min-width: 0;
+}
+
+.house-desc-side{
+  position: relative;
+}
+
+/* box servizi: sticky come Booking/Airbnb */
+.house-amenities{
+  position: sticky;
+  top: 92px; /* se header sticky è alto, aumenta/diminuisci */
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+/* titolino */
+.house-amenities__title{
+  margin: 0 0 12px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.72);
+  font-family: var(--font-serif);
+}
+
+/* griglia servizi nella colonna destra: 1 colonna */
+.house-amenities__grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.amenity{
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: start;
+
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.amenity__icon{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.amenity__name{
+  font-weight: 700;
+  color: rgba(0,0,0,0.92);
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.amenity__desc{
+  color: rgba(0,0,0,0.62);
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+/* Hover premium sui servizi (solo desktop con mouse) */
+.amenity{
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .amenity:hover{
+    transform: translateY(-1px) scale(1.015);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,0,0,0.12);
+  }
+}
+
+
+/* Responsive: sotto 1024 torna tutto in colonna */
+@media (max-width: 1024px){
+  .house-desc-layout{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .house-amenities{
+    position: static;
+    top: auto;
+    margin-top: 10px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* su mobile puoi anche tornare a 2 colonne se vuoi */
+  .house-amenities__grid{
+    grid-template-columns: 1fr;
+  }
+}
+

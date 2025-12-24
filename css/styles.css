@@ -120,6 +120,46 @@ img{ max-width: 100%; display: block; }
 }
 
 /* =========================
+   Hero image — Mobile fix (index)
+   ========================= */
+
+.hero--home{
+  position: relative;
+  overflow: hidden;
+}
+
+/* L’immagine riempie bene il contenitore */
+.hero--home .hero-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* MOBILE: altezza più “fotografica” + posizione migliore */
+@media (max-width: 520px){
+  .hero--home{
+    height: 58vh;          /* evita tagli estremi */
+    min-height: 360px;     /* sicurezza su schermi piccoli */
+    max-height: 520px;     /* non diventa enorme */
+  }
+
+  .hero--home .hero-img{
+    object-position: center top;  /* spesso risolve “taglia la parte importante” */
+  }
+}
+
+/* TABLET / schermi medi */
+@media (max-width: 920px){
+  .hero--home{
+    height: 62vh;
+    min-height: 420px;
+  }
+}
+
+
+/* =========================
    Manifesto / Filosofia
    ========================= */
 .manifesto{
@@ -306,3 +346,6 @@ img{ max-width: 100%; display: block; }
 .booking-embed > div{
   max-width: 100%;
 }
+
+
+
